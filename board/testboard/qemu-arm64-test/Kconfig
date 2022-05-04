@@ -1,0 +1,16 @@
+if TARGET_QEMU_ARM64_TEST
+
+config SYS_BOARD
+        default "qemu-arm64-test"
+
+config SYS_VENDOR
+        default "testboard"
+
+config SYS_SOC
+        default "qemu-arm64-test"
+
+config SYS_CONFIG_NAME
+        default "qemu-arm64-test"
+
+source "board/testboard/common/Kconfig"
+endif

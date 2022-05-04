@@ -1,0 +1,36 @@
+if TARGET_QEMU_ARM64_TEST
+
+config SYS_BOARD
+        default "qemu-arm64-test"
+
+config SYS_VENDOR
+        default "testboard"
+
+config SYS_SOC
+        default "qemu-arm64-test"
+
+config SYS_CONFIG_NAME
+        default "qemu-arm64-test"
+
+
+config SYS_TEXT_BASE
+	default 0x00000000
+
+config BOARD_SPECIFIC_OPTIONS # dummy
+	def_bool y
+	select CMD_QFW
+	select QFW_MMIO
+	imply VIRTIO_MMIO
+	imply VIRTIO_PCI
+	imply VIRTIO_NET
+	imply VIRTIO_BLK
+
+endif
+
+if TARGET_QEMU_ARM64_TEST && !TFABOOT
+config BOARD_SPECIFIC_OPTIONS
+	imply SYS_MTDPARTS_RUNTIME
+	imply SET_DFU_ALT_INFO
+
+source "board/testboard/common/Kconfig"
+endif

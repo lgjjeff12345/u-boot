@@ -1,0 +1,6 @@
+QEMU ARM64 TEST BOARD
+M:	guojie.li <253640748@qq.com>
+S:	Maintained
+F:	board/testboard/qemu-arm64-test/
+F:	include/configs/qemu-arm64-test.h
+F:	configs/lgj_qemu_arm64_defconfig

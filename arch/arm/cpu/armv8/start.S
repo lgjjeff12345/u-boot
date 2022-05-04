@@ -195,6 +195,7 @@ slave_cpu:
 master_cpu:
 	bl	_main
 
+/* disable mmu(bit0), cache(bit2). little endian(bit25) */
 #ifdef CONFIG_SYS_RESET_SCTRL
 reset_sctrl:
 	switch_el x1, 3f, 2f, 1f
